@@ -1,0 +1,16 @@
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica,
+    Arial, sans-serif;
+  margin: auto;
+  text-align: center;
+}
+
+html, body {
+  height:100%;
+  margin:0;
+}
+.scale {
+  width: 1900px;
+  height: 950px;
+  object-fit: contain;
+}

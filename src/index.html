@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="index.css">
+
+  <script src="redditscraper.js"></script>
+  <title>Hentai.js</title>
+</head>
+
+<body>
+  <p id="title">undefined</p>
+  <p id="num">(0/0)</p>
+  <label for="subreddit">Subreddit (ex: hentai, rule34, gonewild, etc.)</label>
+  <input type="text" name="subreddit" id="subreddit" required value="hentai">
+  <button onclick="base()">Update</button>
+  <button onclick="load(-1)"><</button>
+  <button onclick="random()">Random</button>
+  <button onclick="load(1)">></button>
+  <div id="display"><img src="about:blank"></img></div>
+</body>
+
+</html>

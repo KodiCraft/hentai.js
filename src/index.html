@@ -7,15 +7,15 @@
 
   <link rel="stylesheet" href="index.css">
 
-  <script src="redditscraper.js"></script>
+  <script src="scraper.js"></script>
   <title>Hentai.js</title>
 </head>
 
 <body>
-  <p id="title">undefined</p>
+  <p>Warning: NSFW content that may also be disturbing! Be prepared to quickly skip over images you don't like!</p>
   <p id="num">(0/0)</p>
-  <label for="subreddit">Subreddit (ex: hentai, rule34, gonewild, etc.)</label>
-  <input type="text" name="subreddit" id="subreddit" required value="hentai">
+  <label for="tag">Tag (character name, sex position, artist, etc.) separated by a comma <a href="https://rule34.xxx/index.php?page=tags&s=list">Full list</a><br></label>
+  <input type="text" name="tag" id="tag" required value="hentai">
   <button onclick="base()">Update</button>
   <button onclick="load(-1)"><</button>
   <button onclick="random()">Random</button>

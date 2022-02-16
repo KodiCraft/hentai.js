@@ -1,8 +1,8 @@
 {
   "name": "hentai",
   "productName": "hentai",
-  "version": "2.0.0",
-  "description": "My Electron application description",
+  "version": "2.2.1",
+  "description": "Electron application for automatically consuming porn (wow)",
   "main": "src/main.js",
   "scripts": {
     "start": "electron-forge start",

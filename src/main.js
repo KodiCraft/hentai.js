@@ -1,4 +1,5 @@
 const { app, BrowserWindow } = require("electron");
+// const Main = require("electron/main");
 
 const path = require("path");
 
@@ -13,7 +14,25 @@ const loadMainWindow = () => {
     }
   });
 
+  console.log("Reached this point");
   mainWindow.loadFile(path.join(__dirname, "index.html"));
+  console.log("Attempted to load: " + path.join(__dirname, "index.html"));
+  console.log("Loaded file")
+  mainWindow.webContents.on("before-input-event", (event, input) => {
+    if (input.type === "keyDown") {
+      switch (input.key) { // This code is safer than my password
+        case "ArrowRight":
+          mainWindow.webContents.executeJavaScript("load(1)")
+          break;
+        case "ArrowLeft":
+          mainWindow.webContents.executeJavaScript("load(-1)")
+          break;
+        case "Enter":
+          mainWindow.webContents.executeJavaScript("base()")
+          break;
+      }
+    }
+  });
 }
 
 // Quit app when all windows are closed

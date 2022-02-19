@@ -3,6 +3,8 @@ const { app, BrowserWindow } = require("electron");
 
 const path = require("path");
 
+if (require('electron-squirrel-startup')) return app.quit();
+
 const loadMainWindow = () => {
   const mainWindow = new BrowserWindow({
     width: 1920,
@@ -14,10 +16,7 @@ const loadMainWindow = () => {
     }
   });
 
-  console.log("Reached this point");
   mainWindow.loadFile(path.join(__dirname, "index.html"));
-  console.log("Attempted to load: " + path.join(__dirname, "index.html"));
-  console.log("Loaded file")
   mainWindow.webContents.on("before-input-event", (event, input) => {
     if (input.type === "keyDown") {
       switch (input.key) { // This code is safer than my password

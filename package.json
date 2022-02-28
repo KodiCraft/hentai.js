@@ -1,8 +1,8 @@
 {
-  "name": "hentai",
-  "productName": "hentai",
-  "version": "2.2.2",
-  "description": "Electron application for automatically consuming porn (wow)",
+  "name": "hentaijs",
+  "productName": "hentaijs",
+  "version": "2.3.1",
+  "description": "rule34.xxx wrapper allowing you to streamline the porn consumption experience (the internet is wonderful)",
   "main": "src/main.js",
   "scripts": {
     "start": "electron-forge start",
@@ -39,25 +39,37 @@
         },
         {
           "name": "@electron-forge/maker-deb",
-          "config": {}
+          "config": {
+            "executableName": "hentaijs"
+          }
         },
         {
           "name": "@electron-forge/maker-rpm",
-          "config": {}
+          "config": {
+            "executableName": "hentaijs"
+          }
+        }
+      ],
+      "publishers": [
+        {
+          "name": "@electron-forge/publisher-github",
+          "config": {
+            "repository": {
+              "owner": "KodiCraft",
+              "name": "hentai.js"
+            }
+          }
         }
       ]
     }
   },
   "dependencies": {
-    "@capacitor/android": "^3.4.1",
-    "@capacitor/cli": "^3.4.1",
-    "@capacitor/core": "^3.4.1",
-    "@capacitor/ios": "^3.4.1",
     "axios": "^0.25.0",
     "electron-squirrel-startup": "^1.0.0"
   },
   "devDependencies": {
     "@electron-forge/cli": "^6.0.0-beta.63",
+    "@electron-forge/publisher-github": "^6.0.0-beta.63",
     "@electron-forge/maker-deb": "^6.0.0-beta.63",
     "@electron-forge/maker-rpm": "^6.0.0-beta.63",
     "@electron-forge/maker-squirrel": "^6.0.0-beta.63",

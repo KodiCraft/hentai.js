@@ -16,6 +16,8 @@ const loadMainWindow = () => {
     }
   });
 
+  mainWindow.maximize();
+
   mainWindow.loadFile(path.join(__dirname, "index.html"));
   mainWindow.webContents.on("before-input-event", (event, input) => {
     if (input.type === "keyDown") {
@@ -32,6 +34,13 @@ const loadMainWindow = () => {
       }
     }
   });
+
+  mainWindow.webContents.on('new-window', function(e, url) {
+    e.preventDefault();
+    require('electron').shell.openExternal(url);
+  });
+
+  ;
 }
 
 // Quit app when all windows are closed

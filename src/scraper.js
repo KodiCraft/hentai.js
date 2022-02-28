@@ -10,7 +10,7 @@ const downloadJson = (tags) => {
     'User-Agent': 'hentai.js'
   }
   return axios
-    .get(endpoint, {headers: header})
+    .get(endpoint, { headers: header })
     .then(res => {
       DATA = res.data;
       console.log(DATA)
@@ -19,7 +19,8 @@ const downloadJson = (tags) => {
 
 const base = () => {
   downloadJson(document.getElementById("tag")?.value ?? "abmayo")
-    .then(res => load(1))
+    .then(res => load(0
+      ))
 }
 
 const random = () => {
@@ -43,8 +44,13 @@ const load = (count) => {
 }
 
 const updateDisplay = () => {
-  document.getElementById("display").innerHTML = `<img src="${DATA[DATA_INDEX].sample_url}" class="scale"></iframe>` // Hell
-  // document.getElementById("title").innerHTML = DATA[DATA_INDEX].data.title
+  fileExt = DATA[DATA_INDEX].image.split('.').pop();
+  if (fileExt == "png" || fileExt == "jpg" || fileExt == "jpeg" || fileExt == "gif") {
+    document.getElementById("display").innerHTML = `<img src="${DATA[DATA_INDEX].sample_url}" class="scale"></img>` // Hell
+  } else {
+    document.getElementById("display").innerHTML = `<video src="${DATA[DATA_INDEX].file_url}" class="scale" controls autoplay loop></video>`
+  }
+  document.getElementById("display").href = `https://rule34.xxx/index.php?page=post&s=view&id=${DATA[DATA_INDEX].id}`
 }
 
 base()

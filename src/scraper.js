@@ -46,7 +46,7 @@ const load = (count) => {
 const updateDisplay = () => {
   fileExt = DATA[DATA_INDEX].image.split('.').pop();
   if (fileExt == "png" || fileExt == "jpg" || fileExt == "jpeg" || fileExt == "gif") {
-    document.getElementById("display").innerHTML = `<img src="${DATA[DATA_INDEX].sample_url}" class="scale"></img>` // Hell
+    document.getElementById("display").innerHTML = `<img src="${document.getElementById("hq").checked ? DATA[DATA_INDEX].file_url : DATA[DATA_INDEX].sample_url}" class="scale"></img>` // Hell
   } else {
     document.getElementById("display").innerHTML = `<video src="${DATA[DATA_INDEX].file_url}" class="scale" controls autoplay loop></video>`
   }

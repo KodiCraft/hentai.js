@@ -12,7 +12,7 @@
     "make-linux": "electron-forge make --platform linux",
     "make-mac": "electron-forge make --platform darwin",
     "make-win": "electron-forge make --platform win32",
-    "publish": "electron-forge publish win32 linux darwin",
+    "publish": "electron-forge publish",
     "lint": "echo \"No linting configured\""
   },
   "keywords": [],

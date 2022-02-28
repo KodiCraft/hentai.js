@@ -7,11 +7,12 @@
   "scripts": {
     "start": "electron-forge start",
     "package": "electron-forge package",
-    "make": "npm run make-linux && npm run make-mac && npm run make-win",
+    "make": "electron-forge make",
+    "make-all": "npm run make-linux && npm run make-mac && npm run make-win",
     "make-linux": "electron-forge make --platform linux",
     "make-mac": "electron-forge make --platform darwin",
     "make-win": "electron-forge make --platform win32",
-    "publish": "electron-forge publish",
+    "publish": "electron-forge publish win32 linux darwin",
     "lint": "echo \"No linting configured\""
   },
   "keywords": [],
@@ -53,6 +54,11 @@
       "publishers": [
         {
           "name": "@electron-forge/publisher-github",
+          "platforms": [
+            "darwin",
+            "linux",
+            "win32"
+          ],
           "config": {
             "repository": {
               "owner": "KodiCraft",

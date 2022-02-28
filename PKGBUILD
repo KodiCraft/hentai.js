@@ -1,5 +1,5 @@
 # Maintainer: Kodi <kodicraft4@gmail.com>
-pkgname=hentaijs
+pkgname=hentai.js
 pkgver=v2.3.6
 pkgrel=1
 
@@ -32,9 +32,12 @@ prepare() {
 build() {
 	cd "$pkgver"
   npm run build-linux
-  cd out/$pkgname-linux-x64
+  cd out/hentaijs-linux-x64
   mkdir -p /usr/local/bin/hentaijs
   mv * /usr/local/bin/hentaijs
   ln /usr/local/bin/hentaijs/hentaijs /usr/bin/hentaijs
 }
 
+package() {
+  wget $source
+}

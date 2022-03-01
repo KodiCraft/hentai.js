@@ -1,7 +1,7 @@
 {
   "name": "hentaijs",
   "productName": "hentaijs",
-  "version": "3.2.1",
+  "version": "3.2.2",
   "description": "rule34.xxx wrapper allowing you to streamline the porn consumption experience (the internet is wonderful)",
   "main": "src/main.js",
   "scripts": {

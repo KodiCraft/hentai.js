@@ -1,4 +1,6 @@
 const axios = require("axios")
+const fs = require("fs")
+const path = require("path")
 
 let DATA;
 let DATA_INDEX = 0;
@@ -20,7 +22,7 @@ const downloadJson = (tags) => {
 const base = () => {
   downloadJson(document.getElementById("tag")?.value ?? "abmayo")
     .then(res => load(0
-      ))
+    ))
 }
 
 const random = () => {
@@ -51,6 +53,7 @@ const updateDisplay = () => {
     document.getElementById("display").innerHTML = `<video src="${DATA[DATA_INDEX].file_url}" class="scale" controls autoplay loop></video>`
   }
   document.getElementById("display").href = `https://rule34.xxx/index.php?page=post&s=view&id=${DATA[DATA_INDEX].id}`
+  document.getElementById("download").href = DATA[DATA_INDEX].file_url
 }
 
 base()

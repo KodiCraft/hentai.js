@@ -2,6 +2,7 @@ const { app, BrowserWindow } = require("electron");
 // const Main = require("electron/main");
 
 const path = require("path");
+const axios = require("axios");
 
 if (require('electron-squirrel-startup')) return app.quit();
 
@@ -33,6 +34,8 @@ const loadMainWindow = () => {
           break;
       }
     }
+
+
   });
 
   mainWindow.webContents.on('new-window', function(e, url) {

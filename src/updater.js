@@ -1,4 +1,4 @@
-const MYVERSION = 323
+const MYVERSION = 324
 
 console.log("Checking for updates...")
 axios.get("https://api.github.com/repos/KodiCraft/hentai.js/releases")

@@ -1,5 +1,10 @@
-const MYVERSION = 325
+const MYVERSION = 330
 
+let searchedFile = process.execPath.match(".*(?=/.*$)")[0] + "/.noupdates"
+
+console.log(`Checking if file "${searchedFile}" exists, create that file to disable updates`)
+
+if (!fs.existsSync(searchedFile)) {
 console.log("Checking for updates...")
 axios.get("https://api.github.com/repos/KodiCraft/hentai.js/releases")
   .then(res => {
@@ -16,4 +21,10 @@ axios.get("https://api.github.com/repos/KodiCraft/hentai.js/releases")
         require("electron").shell.openExternal("https://github.com/KodiCraft/hentai.js/releases")
       }
     }
+    else if (MYVERSION > id) {
+      alert("Current version is above latest version, if you're not on a dev build, I hope you know what you're doing")
+    }
   })
+} else {
+  console.log(".noupdates file found, not checking for updates")
+}

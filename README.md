@@ -5,17 +5,17 @@ I started this dumb little project to learn the electron framework, so it's not 
 
 # Installation
 ## Windows
-Simply download the latest `setup.exe` release from the [[Releases]] tab and execute it, that will install the program and add it to your start menu. It is not signed so it may be detected by an antivirus.
+Simply download the latest `setup.exe` release from the [Releases][Releases] tab and execute it, that will install the program and add it to your start menu. It is not signed so it may be detected by an antivirus.
 
-While I do promise it's not a virus, you might still want to consider checking the source code or [[#Compiling from source]]
+While I do promise it's not a virus, you might still want to consider checking the source code or [Compiling from source](# Compiling from source)
 ## MacOS
-Simply download the latest `darwin` zip file from the [[Releases]] tab and execute the `hentaijs` executable. There is currently no better way to install the program.
+Simply download the latest `darwin` zip file from the [Releases][Releases] tab and execute the `hentaijs` executable. There is currently no better way to install the program.
 ## Arch Linux (AUR install)
 If you use Arch Linux or an Arch-derived distribution, you can install `hentai.js` from the AUR. That package is maintained by myself so it will always be up to date.
 
 Installing from the AUR will automatically disable update checking since your AUR helper will update the program automatically.
 ## Linux
-Simply download the latest `linux` zip file from the [[Releases]] tab and execute the `hentaijs` executable. You might want to add it to your PATH or to your own Application Launcher for convenience.
+Simply download the latest `linux` zip file from the [Releases][Releases] tab and execute the `hentaijs` executable. You might want to add it to your PATH or to your own Application Launcher for convenience.
 
 # Usage
 Enter any rule34.xxx tag in the text area and hit enter to reload the data. Then click on **>** and **<** or use the arrow keys to navigate the images.
@@ -25,7 +25,7 @@ You can click on an image to view it on rule34.xxx, you can click the download b
 # Compiling from source
 hentai.js depends on **Node.js** and on **npm**. If you're on linux, those will be available on your package manager. If you're on another platform, simply follow that platform's install instructions
 
-1. Download the latest source code or the source code of the latest release
+1. Download the latest source code or the source code of the [latest release][Releases]. In this example we will clone the entire repo.
 ```sh
 git clone https://github.com/KodiCraft/hentai.js && cd hentai.js
 ```
@@ -46,3 +46,5 @@ npm run make-win
 ```
 
 The files can be found in the `out/` directory, the installer can be found in the `out/make` directory
+
+[Releases]: https://github.com/KodiCraft/hentai.js/releases
